@@ -1,0 +1,14 @@
+{
+    "name": "ds_sql_weather_staging",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_azure_sql",
+            "type": "LinkedServiceReference"
+        },
+        "type": "AzureSqlTable",
+        "typeProperties": {
+            "tableName": "staging.weather_hourly"
+        },
+        "schema": []
+    }
+}
