@@ -1,0 +1,59 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlServerName": {
+            "type": "string"
+        },
+        "sqlDatabaseName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "adminLogin": {
+            "type": "string"
+        },
+        "adminPassword": {
+            "type": "secureString"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2022-05-01-preview",
+            "name": "[parameters('sqlServerName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "administratorLogin": "[parameters('adminLogin')]",
+                "administratorLoginPassword": "[parameters('adminPassword')]",
+                "version": "12.0"
+            },
+            "resources": [
+                {
+                    "type": "databases",
+                    "apiVersion": "2022-05-01-preview",
+                    "name": "[parameters('sqlDatabaseName')]",
+                    "location": "[parameters('location')]",
+                    "sku": {
+                        "name": "Basic",
+                        "tier": "Basic"
+                    },
+                    "properties": {
+                        "collation": "SQL_Latin1_General_CP1_CI_AS",
+                        "maxSizeBytes": 2147483648
+                    }
+                },
+                {
+                    "type": "firewallRules",
+                    "apiVersion": "2022-05-01-preview",
+                    "name": "AllowAzureServices",
+                    "properties": {
+                        "startIpAddress": "0.0.0.0",
+                        "endIpAddress": "0.0.0.0"
+                    }
+                }
+            ]
+        }
+    ]
+}

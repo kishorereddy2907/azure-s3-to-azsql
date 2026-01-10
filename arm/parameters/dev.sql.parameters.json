@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlServerName": {
+            "value": "azsql-s3-azsql-dev"
+        },
+        "sqlDatabaseName": {
+            "value": "weatherdb"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "adminLogin": {
+            "value": "sqladminuser"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/50a2e640-5db5-4e5f-b267-93336c29eacb/resourceGroups/rg-azure-s3-to-azsql-dev/providers/Microsoft.KeyVault/vaults/kv-s3-azsql-dev-001"
+                },
+                "secretName": "azure-sql-password"
+            }
+        }
+    }
+}
