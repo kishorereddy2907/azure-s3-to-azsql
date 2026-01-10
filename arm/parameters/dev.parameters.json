@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "keyVaultName": {
+            "value": "kv-s3-azsql-dev-001"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "tenantId": {
+            "value": "68b97225-aa36-40fd-8e3c-948e8f7e5f28"
+        }
+    }
+}

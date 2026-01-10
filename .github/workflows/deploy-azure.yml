@@ -29,3 +29,11 @@ jobs:
         scope: resourcegroup
         resourceGroupName: rg-azure-s3-to-azsql-dev
         template: arm/dummy.json
+    - name: Deploy Key Vault
+      uses: azure/arm-deploy@v2
+      with:
+        scope: resourcegroup
+        resourceGroupName: rg-azure-s3-to-azsql-dev
+        template: arm/keyvault.json
+        parameters: arm/parameters/dev.parameters.json
+
