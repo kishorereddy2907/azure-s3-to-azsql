@@ -36,4 +36,12 @@ jobs:
         resourceGroupName: rg-azure-s3-to-azsql-dev
         template: arm/keyvault.json
         parameters: arm/parameters/dev.parameters.json
+    - name: Deploy Azure Data Factory
+      uses: azure/arm-deploy@v2
+      with:
+        scope: resourcegroup
+        resourceGroupName: rg-azure-s3-to-azsql-dev
+        template: arm/adf.json
+        parameters: arm/parameters/dev.adf.parameters.json
+    
 
