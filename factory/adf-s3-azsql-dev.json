@@ -1,0 +1,9 @@
+{
+	"name": "adf-s3-azsql-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a7b95bca-5a9b-4e16-be11-70bb1b4e71c4",
+		"tenantId": "68b97225-aa36-40fd-8e3c-948e8f7e5f28"
+	}
+}
