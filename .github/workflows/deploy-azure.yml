@@ -27,5 +27,5 @@ jobs:
       uses: azure/arm-deploy@v2
       with:
         scope: resourcegroup
-        resourceGroupName: <your-rg-name>
+        resourceGroupName: rg-azure-s3-to-azsql-dev
         template: arm/dummy.json
