@@ -50,7 +50,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"event_date": {
-								"value": "@formatDateTime(utcnow(),'yyyy-MM-dd')\n",
+								"value": "2026-01-16",
 								"type": "Expression"
 							}
 						}
