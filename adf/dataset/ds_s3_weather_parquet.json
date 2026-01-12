@@ -9,9 +9,9 @@
         "typeProperties": {
             "location": {
                 "type": "AmazonS3Location",
-                "bucketName": "YOUR-CURATED-S3-BUCKET",
+                "bucketName": "open-meteo-dev-curated",
                 "folderPath": {
-                    "value": "curated/weather/event_date=@{dataset().event_date}",
+                    "value": "open-meteo/event_date=@{dataset().event_date}",
                     "type": "Expression"
                 }
             }
