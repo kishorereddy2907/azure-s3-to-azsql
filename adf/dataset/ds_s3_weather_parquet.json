@@ -1,26 +1,29 @@
 {
-    "name": "ds_s3_weather_parquet",
-    "properties": {
-        "linkedServiceName": {
-            "referenceName": "ls_aws_s3",
-            "type": "LinkedServiceReference"
-        },
-        "type": "Parquet",
-        "typeProperties": {
-            "location": {
-                "type": "AmazonS3Location",
-                "bucketName": "open-meteo-dev-curated",
-                "folderPath": {
-                    "value": "open-meteo/event_date=@{dataset().event_date}",
-                    "type": "Expression"
-                }
-            }
-        },
-        "parameters": {
-            "event_date": {
-                "type": "String"
-            }
-        },
-        "schema": []
-    }
+	"name": "ds_s3_weather_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_aws_s3",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"event_date": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AmazonS3Location",
+				"bucketName": "open-meteo-dev-curated",
+				"folderPath": {
+					"value": "open-meteo/event_date=@{dataset().event_date}",
+					"type": "Expression"
+				},
+				"fileName": "*.parquet"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
 }
