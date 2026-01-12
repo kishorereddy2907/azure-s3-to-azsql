@@ -16,10 +16,7 @@
 			"location": {
 				"type": "AmazonS3Location",
 				"bucketName": "open-meteo-dev-curated",
-				"folderPath": {
-					"value": "open-meteo/event_date=@{dataset().event_date}",
-					"type": "Expression"
-				},
+				"folderPath": "open-meteo/event_date=@{dataset().event_date}",
 				"fileName": "*.parquet"
 			},
 			"compressionCodec": "snappy"
